@@ -170,6 +170,7 @@ export interface Post {
     description?: string | null;
   };
   publishedAt?: string | null;
+  originallyWrittenAt?: string | null;
   authors?: (string | User)[] | null;
   populatedAuthors?:
     | {
@@ -944,6 +945,7 @@ export interface PostsSelect<T extends boolean = true> {
         description?: T;
       };
   publishedAt?: T;
+  originallyWrittenAt?: T;
   authors?: T;
   populatedAuthors?:
     | T
