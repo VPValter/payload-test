@@ -1,6 +1,7 @@
 'use client'
 import { cn } from '@/utilities/cn'
 import useClickableCard from '@/utilities/useClickableCard'
+import { formatDateTime } from '@/utilities/formatDateTime'
 import Link from 'next/link'
 import React, { Fragment } from 'react'
 
@@ -26,10 +27,6 @@ export const Card: React.FC<{
 
   const { slug, categories, meta, title, originallyWrittenAt } = doc || {}
   const { description, image: metaImage } = meta || {}
-
-  const formattedDate = originallyWrittenAt
-    ? new Date(originallyWrittenAt).toLocaleDateString('sr-RS')
-    : ''
 
   const hasCategories = categories && Array.isArray(categories) && categories.length > 0
   const titleToUse = titleFromProps || title
@@ -88,10 +85,10 @@ export const Card: React.FC<{
 
         {description && <div className="mt-2">{description && <p>{sanitizedDescription}</p>}</div>}
 
-        {formattedDate && (
-          <div className="mt-2 text-right">
-            <small>{formattedDate}</small>
-          </div>
+        {originallyWrittenAt && (
+          <time className="mt-2 text-right text-xs block w-full" dateTime={originallyWrittenAt}>
+            {formatDateTime(originallyWrittenAt)}
+          </time>
         )}
       </div>
     </article>
