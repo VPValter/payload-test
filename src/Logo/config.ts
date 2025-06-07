@@ -1,4 +1,4 @@
-import { GlobalConfig } from 'payload/types'
+import type { GlobalConfig } from 'payload'
 import { revalidateLogo } from './hooks/revalidateLogo'
 
 export const Logo: GlobalConfig = {
