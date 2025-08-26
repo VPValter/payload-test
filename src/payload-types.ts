@@ -119,7 +119,7 @@ export interface Page {
                 } | null);
             url?: string | null;
             label: string;
-            appearance?: ('default' | 'outline') | null;
+            appearance?: ('default' | 'outline-solid') | null;
           };
           id?: string | null;
         }[]
@@ -349,7 +349,7 @@ export interface CallToActionBlock {
               } | null);
           url?: string | null;
           label: string;
-          appearance?: ('default' | 'outline') | null;
+          appearance?: ('default' | 'outline-solid') | null;
         };
         id?: string | null;
       }[]
@@ -396,7 +396,7 @@ export interface ContentBlock {
               } | null);
           url?: string | null;
           label: string;
-          appearance?: ('default' | 'outline') | null;
+          appearance?: ('default' | 'outline-solid') | null;
         };
         id?: string | null;
       }[]
