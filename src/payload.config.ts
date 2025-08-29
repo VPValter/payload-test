@@ -75,5 +75,8 @@ export default buildConfig({
   typescript: {
     outputFile: path.resolve(dirname, 'payload-types.ts'),
   },
+  graphQL: {
+    disable: true,
+  },
   telemetry: false,
 })
