@@ -8,7 +8,7 @@ interface Props {
   logoUrl?: string
 }
 
-export const Logo = (props: Props) => {
+export const LogoComponent = (props: Props) => {
   const { loading: loadingFromProps, priority: priorityFromProps, className, logoUrl } = props
 
   const loading = loadingFromProps || 'lazy'
@@ -17,7 +17,7 @@ export const Logo = (props: Props) => {
   return (
     /* eslint-disable @next/next/no-img-element */
     <img
-      alt="Payload Logo"
+      alt="VladimirP Logo"
       width={193}
       height={34}
       loading={loading}
