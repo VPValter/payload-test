@@ -121,5 +121,11 @@ html[data-theme='light'] {
 }
 
 .prose blockquote {
-  @apply border-l-4 border-blue-500 pl-4 italic text-gray-700;
+  @apply border-l-4 border-blue-500 pl-4 italic text-gray-600;
+}
+.prose .banner {
+  @apply px-0;
+}
+.prose .banner * {
+  @apply my-0;
 }
