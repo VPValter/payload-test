@@ -107,7 +107,7 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground min-h-screen flex flex-col;
+    @apply bg-zinc-950 text-foreground min-h-screen flex flex-col;
   }
 }
 
@@ -121,5 +121,11 @@ html[data-theme='light'] {
 }
 
 .prose blockquote {
-  @apply border-l-4 border-blue-500 pl-4 italic text-gray-700;
+  @apply border-l-4 border-blue-500 pl-4 italic text-gray-600;
+}
+.prose .banner {
+  @apply px-0;
+}
+.prose .banner * {
+  @apply my-0;
 }
