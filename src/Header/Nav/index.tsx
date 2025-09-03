@@ -14,13 +14,20 @@ export const HeaderNav: React.FC<{ data: HeaderType }> = ({ data }) => {
   const pathname = usePathname()
 
   return (
-    <nav className="flex items-center gap-8">
+    <nav className="flex items-center gap-6">
       {navItems.map(({ link }, i) => {
+        const slug =
+          link.url ||
+          (typeof link.reference?.value === 'object' && 'slug' in link.reference.value
+            ? '/' + link.reference.value.slug
+            : '')
+        const match = pathname === '/' ? '/home' : pathname
+
         return (
           <CMSLink
             key={i}
             {...link}
-            className={`transition-colors text-gray-400 hover:text-white hover:no-underline font-medium text-base ${link.url === pathname ? 'text-white' : ''}`}
+            className={`transition-colors text-gray-400 hover:text-white hover:no-underline font-medium text-base ${slug === match ? 'text-white' : ''}`}
             appearance="link"
           />
         )
