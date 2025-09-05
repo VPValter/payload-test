@@ -7,8 +7,6 @@ import React, { Fragment } from 'react'
 
 import type { Post } from '@/payload-types'
 
-import { Media } from '@/components/Media'
-
 export type CardPostData = Pick<
   Post,
   'slug' | 'categories' | 'meta' | 'title' | 'originallyWrittenAt'
@@ -34,63 +32,53 @@ export const Card: React.FC<{
   const href = `/${relationTo}/${slug}`
 
   return (
-    <article
-      className={cn(
-        'border border-border rounded-lg overflow-hidden bg-card hover:cursor-pointer',
-        className,
+    <article className={cn('cursor-pointer', className)} ref={card.ref}>
+      {showCategories && hasCategories && (
+        <div className="uppercase text-sm mb-4">
+          {showCategories && hasCategories && (
+            <div>
+              {categories?.map((category, index) => {
+                if (typeof category === 'object') {
+                  const { title: titleFromCategory } = category
+
+                  const categoryTitle = titleFromCategory || 'Untitled category'
+
+                  const isLast = index === categories.length - 1
+
+                  return (
+                    <Fragment key={index}>
+                      {categoryTitle}
+                      {!isLast && <Fragment>, &nbsp;</Fragment>}
+                    </Fragment>
+                  )
+                }
+
+                return null
+              })}
+            </div>
+          )}
+        </div>
       )}
-      ref={card.ref}
-    >
-      <div className="relative w-full ">
-        {!metaImage && <div className="">No image</div>}
-        {metaImage && typeof metaImage !== 'string' && <Media resource={metaImage} size="33vw" />}
-      </div>
-      <div className="p-4">
-        {showCategories && hasCategories && (
-          <div className="uppercase text-sm mb-4">
-            {showCategories && hasCategories && (
-              <div>
-                {categories?.map((category, index) => {
-                  if (typeof category === 'object') {
-                    const { title: titleFromCategory } = category
 
-                    const categoryTitle = titleFromCategory || 'Untitled category'
+      {originallyWrittenAt && (
+        <time className="text-sm text-gray-500 mb-2 block" dateTime={originallyWrittenAt}>
+          {formatDateTime(originallyWrittenAt)}
+        </time>
+      )}
 
-                    const isLast = index === categories.length - 1
+      {titleToUse && (
+        <h3 className="text-xl font-medium text-brand-blue-primary hover:text-brand-blue-secondary transition-colors cursor-pointer mb-2">
+          <Link href={href} ref={link.ref}>
+            {titleToUse}
+          </Link>
+        </h3>
+      )}
 
-                    return (
-                      <Fragment key={index}>
-                        {categoryTitle}
-                        {!isLast && <Fragment>, &nbsp;</Fragment>}
-                      </Fragment>
-                    )
-                  }
-
-                  return null
-                })}
-              </div>
-            )}
-          </div>
-        )}
-
-        {titleToUse && (
-          <div className="prose">
-            <h3>
-              <Link className="not-prose" href={href} ref={link.ref}>
-                {titleToUse}
-              </Link>
-            </h3>
-          </div>
-        )}
-
-        {description && <div className="mt-2">{description && <p>{sanitizedDescription}</p>}</div>}
-
-        {originallyWrittenAt && (
-          <time className="mt-2 text-right text-xs block w-full" dateTime={originallyWrittenAt}>
-            {formatDateTime(originallyWrittenAt)}
-          </time>
-        )}
-      </div>
+      {description && (
+        <div className="text-gray-400 leading-relaxed">
+          {description && <p>{sanitizedDescription}</p>}
+        </div>
+      )}
     </article>
   )
 }

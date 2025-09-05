@@ -29,26 +29,30 @@ export default async function Page() {
   })
 
   return (
-    <div className="pt-24 pb-24">
+    <div className="pt-32 pb-20 px-6">
       <PageClient />
-      <div className="container mb-16">
+      <div className="max-w-5xl mx-auto">
         <div className="prose dark:prose-invert max-w-none">
-          <h1>Posts</h1>
+          <h1 className="text-4xl font-bold text-white mb-6">Posts</h1>
+          <p className="text-lg text-gray-400 mb-16">
+            Posts from my blog. I write some programming stuff here.
+          </p>
         </div>
       </div>
 
-      <div className="container mb-8">
+      <CollectionArchive posts={posts.docs} />
+
+      <div className="max-w-5xl mx-auto mt-16">
         <PageRange
           collection="posts"
           currentPage={posts.page}
           limit={12}
           totalDocs={posts.totalDocs}
+          className="mb-8"
         />
       </div>
 
-      <CollectionArchive posts={posts.docs} />
-
-      <div className="container">
+      <div className="max-w-5xl mx-auto">
         {posts.totalPages > 1 && posts.page && (
           <Pagination page={posts.page} totalPages={posts.totalPages} />
         )}
