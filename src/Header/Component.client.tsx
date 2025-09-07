@@ -32,7 +32,7 @@ export const HeaderClient: React.FC<HeaderClientProps> = ({ data, logoData }) =>
 
   return (
     <header
-      className="fixed top-0 w-full bg-black/80 backdrop-blur-md border-b border-gray-800 z-50   "
+      className="fixed top-0 w-full bg-zinc-950/80 backdrop-blur-md border-b border-gray-800 z-50   "
       {...(theme ? { 'data-theme': theme } : {})}
     >
       <div className="max-w-6xl mx-auto px-6 py-4">
