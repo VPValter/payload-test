@@ -38,6 +38,26 @@ const jsxConverters: JSXConvertersFunction<NodeTypes> = ({ defaultConverters }) 
     code: ({ node }) => <CodeBlock className="col-start-2" {...node.fields} />,
     cta: ({ node }) => <CallToActionBlock {...node.fields} />,
   },
+  text: ({ node }) => {
+    const style: React.CSSProperties = {}
+
+    // Check for custom color in node['$']
+    const colorKey = node['$']?.color
+
+    if (colorKey && typeof colorKey === 'string') {
+      // Merge your color maps as in your editor config
+      const colorMap = {
+        brand: '#226eff',
+        brandLight: '#2297ff',
+      }
+      const colorValue = colorMap[colorKey]
+      if (colorValue) {
+        style.color = colorValue
+      }
+    }
+
+    return <span style={style}>{node.text}</span>
+  },
 })
 
 type Props = {
