@@ -6,11 +6,15 @@ import {
   ParagraphFeature,
   lexicalEditor,
   UnderlineFeature,
+  TextStateFeature,
+  defaultColors,
+  BlockquoteFeature,
 } from '@payloadcms/richtext-lexical'
 
 export const defaultLexical: Config['editor'] = lexicalEditor({
   features: () => {
     return [
+      BlockquoteFeature(),
       ParagraphFeature(),
       UnderlineFeature(),
       BoldFeature(),
@@ -35,6 +39,16 @@ export const defaultLexical: Config['editor'] = lexicalEditor({
               required: true,
             },
           ]
+        },
+      }),
+      TextStateFeature({
+        state: {
+          color: {
+            ...defaultColors.text,
+            ...defaultColors.background,
+            brand: { label: 'Brand', css: { color: '#226eff' } },
+            brandLight: { label: 'Brand Light', css: { color: '#2297ff' } },
+          },
         },
       }),
     ]
