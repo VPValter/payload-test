@@ -31,6 +31,11 @@
     font-weight: auto;
   }
 
+  @theme {
+    --color-brand-primary: #226eff;
+    --color-brand-secondary: #2297ff;
+  }
+
   :root {
     --background: 0 0% 100%;
     --foreground: 222.2 84% 4.9%;
