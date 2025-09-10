@@ -10,6 +10,7 @@ import {
   defaultColors,
   BlockquoteFeature,
 } from '@payloadcms/richtext-lexical'
+import { customColorMap } from '@/utilities/customColorMap'
 
 export const defaultLexical: Config['editor'] = lexicalEditor({
   features: () => {
@@ -46,8 +47,7 @@ export const defaultLexical: Config['editor'] = lexicalEditor({
           color: {
             ...defaultColors.text,
             ...defaultColors.background,
-            brand: { label: 'Brand', css: { color: '#226eff' } },
-            brandLight: { label: 'Brand Light', css: { color: '#2297ff' } },
+            ...customColorMap,
           },
         },
       }),

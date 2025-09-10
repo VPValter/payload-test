@@ -1,5 +1,5 @@
 import { MediaBlock } from '@/blocks/MediaBlock/Component'
-import { DefaultNodeTypes, SerializedBlockNode } from '@payloadcms/richtext-lexical'
+import { defaultColors, DefaultNodeTypes, SerializedBlockNode } from '@payloadcms/richtext-lexical'
 import { SerializedEditorState } from '@payloadcms/richtext-lexical/lexical'
 import {
   JSXConvertersFunction,
@@ -16,6 +16,7 @@ import type {
 import { BannerBlock } from '@/blocks/Banner/Component'
 import { CallToActionBlock } from '@/blocks/CallToAction/Component'
 import { cn } from '@/utilities/cn'
+import { customColorMap } from '@/utilities/customColorMap'
 
 type NodeTypes =
   | DefaultNodeTypes
@@ -40,21 +41,40 @@ const jsxConverters: JSXConvertersFunction<NodeTypes> = ({ defaultConverters }) 
   },
   text: ({ node }) => {
     const style: React.CSSProperties = {}
-
-    // Check for custom color in node['$']
     const colorKey = node['$']?.color
+    // const backgroundKey = node['$']?.background
 
-    if (colorKey && typeof colorKey === 'string') {
-      // Merge your color maps as in your editor config
-      const colorMap = {
-        brand: '#226eff',
-        brandLight: '#2297ff',
-      }
-      const colorValue = colorMap[colorKey]
+    // const colorMap = {
+    // FOR SOME REASON IT WONT LET ME USE DEFAULTCOLORS IN THIS FILE, SOMETHING TO WITH IMPORTS
+    //       Module not found: Can't resolve 'worker_threads'
+    //   4 | const split = require('split2')
+    //   5 | const { Duplex } = require('stream')
+    // > 6 | const { parentPort, workerData } = require('worker_threads')
+    //     |                                  ^
+    //   7 |
+    //   8 | function createDeferred () {
+    //   9 |   let resolve
+
+    // https://nextjs.org/docs/messages/module-not-found
+
+    // ...defaultColors.text,
+    // ...defaultColors.background,
+    // ...customColorMap
+    // }
+
+    if (typeof colorKey === 'string') {
+      const colorValue = customColorMap[colorKey]?.css?.color
       if (colorValue) {
         style.color = colorValue
       }
     }
+
+    // if (typeof backgroundKey === 'string') {
+    //   const backgroundValue = customColorMap[backgroundKey]?.css?.background
+    //   if (backgroundValue) {
+    //     style.background = backgroundValue
+    //   }
+    // }
 
     return <span style={style}>{node.text}</span>
   },
