@@ -42,7 +42,10 @@ export const HeaderClient: React.FC<HeaderClientProps> = ({ data, logoData }) =>
               loading="eager"
               priority="high"
               className="invert dark:invert-0"
-              logoUrl={logoData?.logo?.url}
+              // logoUrl={logoData?.logo?.url}
+              logoUrl={
+                typeof logoData.logo === 'string' ? logoData.logo : logoData.logo?.url || undefined
+              }
             />
           </Link>
           <HeaderNav data={data} />
