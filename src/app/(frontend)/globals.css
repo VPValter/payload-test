@@ -36,7 +36,7 @@
     --color-brand-secondary: #2297ff;
   }
 
-  :root {
+  /* :root {
     --background: 0 0% 100%;
     --foreground: 222.2 84% 4.9%;
 
@@ -70,9 +70,9 @@
     --success: 196 52% 74%;
     --warning: 34 89% 85%;
     --error: 10 100% 86%;
-  }
+  } */
 
-  [data-theme='dark'] {
+  :root {
     --background: 0 0% 0%;
     --foreground: 210 40% 98%;
 
