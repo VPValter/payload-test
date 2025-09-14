@@ -31,7 +31,12 @@
     font-weight: auto;
   }
 
-  :root {
+  @theme {
+    --color-brand-primary: #226eff;
+    --color-brand-secondary: #2297ff;
+  }
+
+  /* :root {
     --background: 0 0% 100%;
     --foreground: 222.2 84% 4.9%;
 
@@ -65,9 +70,9 @@
     --success: 196 52% 74%;
     --warning: 34 89% 85%;
     --error: 10 100% 86%;
-  }
+  } */
 
-  [data-theme='dark'] {
+  :root {
     --background: 0 0% 0%;
     --foreground: 210 40% 98%;
 
@@ -128,4 +133,11 @@ html[data-theme='light'] {
 }
 .prose .banner * {
   @apply my-0;
+}
+
+h1 {
+  @apply text-5xl md:text-6xl font-bold mb-2;
+}
+h2 {
+  @apply text-4xl md:text-5xl font-bold mb-2 mt-0;
 }

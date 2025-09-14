@@ -41,8 +41,11 @@ export const HeaderClient: React.FC<HeaderClientProps> = ({ data, logoData }) =>
             <LogoComponent
               loading="eager"
               priority="high"
-              className="invert dark:invert-0"
-              logoUrl={logoData?.logo?.url}
+              className="h-[34px] w-[34px]"
+              // logoUrl={logoData?.logo?.url}
+              logoUrl={
+                typeof logoData.logo === 'string' ? logoData.logo : logoData.logo?.url || undefined
+              }
             />
           </Link>
           <HeaderNav data={data} />
