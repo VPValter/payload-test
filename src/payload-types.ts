@@ -185,7 +185,28 @@ export interface Page {
       | null;
     media?: (string | null) | Media;
   };
-  layout: (CallToActionBlock | ContentBlock | BannerBlock | MediaBlock | ArchiveBlock | FormBlock)[];
+  layout: (
+    | CallToActionBlock
+    | ContentBlock
+    | BannerBlock
+    | MediaBlock
+    | ArchiveBlock
+    | FormBlock
+    | {
+        links?:
+          | {
+              link: string;
+              name: string;
+              icon: string;
+              cssClasses?: string | null;
+              id?: string | null;
+            }[]
+          | null;
+        id?: string | null;
+        blockName?: string | null;
+        blockType: 'socialLinks';
+      }
+  )[];
   meta?: {
     title?: string | null;
     /**
@@ -947,6 +968,21 @@ export interface PagesSelect<T extends boolean = true> {
         mediaBlock?: T | MediaBlockSelect<T>;
         archive?: T | ArchiveBlockSelect<T>;
         formBlock?: T | FormBlockSelect<T>;
+        socialLinks?:
+          | T
+          | {
+              links?:
+                | T
+                | {
+                    link?: T;
+                    name?: T;
+                    icon?: T;
+                    cssClasses?: T;
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
       };
   meta?:
     | T

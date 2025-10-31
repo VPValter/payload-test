@@ -9,6 +9,7 @@ import { ContentBlock } from '@/blocks/Content/Component'
 import { FormBlock } from '@/blocks/Form/Component'
 import { MediaBlock } from '@/blocks/MediaBlock/Component'
 import { BannerBlock } from '@/blocks/Banner/Component'
+import { SocialLinksBlock } from '@/blocks/SocialLinks/Component'
 
 const blockComponents = {
   archive: ArchiveBlock,
@@ -17,6 +18,8 @@ const blockComponents = {
   cta: CallToActionBlock,
   formBlock: FormBlock,
   mediaBlock: MediaBlock,
+  // key must match the block slug (slug: 'socialLinks' in config.ts):
+  socialLinks: SocialLinksBlock,
 }
 
 export const RenderBlocks: React.FC<{
