@@ -211,6 +211,11 @@ export interface Page {
         blockName?: string | null;
         blockType: 'techStackBlock';
       }
+    | {
+        id?: string | null;
+        blockName?: string | null;
+        blockType: 'experienceBlock';
+      }
   )[];
   meta?: {
     title?: string | null;
@@ -989,6 +994,12 @@ export interface PagesSelect<T extends boolean = true> {
               blockName?: T;
             };
         techStackBlock?:
+          | T
+          | {
+              id?: T;
+              blockName?: T;
+            };
+        experienceBlock?:
           | T
           | {
               id?: T;

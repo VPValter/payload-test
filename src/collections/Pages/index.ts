@@ -10,6 +10,7 @@ import { FormBlock } from '../../blocks/Form/config'
 import { MediaBlock } from '../../blocks/MediaBlock/config'
 import { SocialLinks } from '@/blocks/SocialLinks/config'
 import { TechStack } from '@/blocks/TechStackBlock/config'
+import { Experience } from '@/blocks/ExperienceBlock/config'
 import { hero } from '@/heros/config'
 import { slugField } from '@/fields/slug'
 import { populatePublishedAt } from '../../hooks/populatePublishedAt'
@@ -87,6 +88,7 @@ export const Pages: CollectionConfig<'pages'> = {
                 FormBlock,
                 SocialLinks,
                 TechStack,
+                Experience,
               ],
               required: true,
               admin: {
