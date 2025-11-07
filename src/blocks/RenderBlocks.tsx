@@ -10,6 +10,7 @@ import { FormBlock } from '@/blocks/Form/Component'
 import { MediaBlock } from '@/blocks/MediaBlock/Component'
 import { BannerBlock } from '@/blocks/Banner/Component'
 import { SocialLinksBlock } from '@/blocks/SocialLinks/Component'
+import { TechStackBlock } from '@/blocks/TechStackBlock/Component'
 
 const blockComponents = {
   archive: ArchiveBlock,
@@ -20,6 +21,7 @@ const blockComponents = {
   mediaBlock: MediaBlock,
   // key must match the block slug (slug: 'socialLinks' in config.ts):
   socialLinks: SocialLinksBlock,
+  techStackBlock: TechStackBlock,
 }
 
 export const RenderBlocks: React.FC<{

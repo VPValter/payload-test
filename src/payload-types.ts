@@ -206,6 +206,11 @@ export interface Page {
         blockName?: string | null;
         blockType: 'socialLinks';
       }
+    | {
+        id?: string | null;
+        blockName?: string | null;
+        blockType: 'techStackBlock';
+      }
   )[];
   meta?: {
     title?: string | null;
@@ -980,6 +985,12 @@ export interface PagesSelect<T extends boolean = true> {
                     cssClasses?: T;
                     id?: T;
                   };
+              id?: T;
+              blockName?: T;
+            };
+        techStackBlock?:
+          | T
+          | {
               id?: T;
               blockName?: T;
             };
