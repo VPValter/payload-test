@@ -212,6 +212,31 @@ export interface Page {
         blockType: 'techStackBlock';
       }
     | {
+        experience?:
+          | {
+              company: string;
+              position: string;
+              period: string;
+              current?: boolean | null;
+              description: {
+                root: {
+                  type: string;
+                  children: {
+                    type: any;
+                    version: number;
+                    [k: string]: unknown;
+                  }[];
+                  direction: ('ltr' | 'rtl') | null;
+                  format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                  indent: number;
+                  version: number;
+                };
+                [k: string]: unknown;
+              };
+              techStack?: string | null;
+              id?: string | null;
+            }[]
+          | null;
         id?: string | null;
         blockName?: string | null;
         blockType: 'experienceBlock';
@@ -1002,6 +1027,17 @@ export interface PagesSelect<T extends boolean = true> {
         experienceBlock?:
           | T
           | {
+              experience?:
+                | T
+                | {
+                    company?: T;
+                    position?: T;
+                    period?: T;
+                    current?: T;
+                    description?: T;
+                    techStack?: T;
+                    id?: T;
+                  };
               id?: T;
               blockName?: T;
             };

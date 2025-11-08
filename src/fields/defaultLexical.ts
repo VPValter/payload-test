@@ -9,17 +9,21 @@ import {
   TextStateFeature,
   defaultColors,
   BlockquoteFeature,
+  HeadingFeature,
+  AlignFeature,
 } from '@payloadcms/richtext-lexical'
 import { customColorMap } from '@/utilities/customColorMap'
 
 export const defaultLexical: Config['editor'] = lexicalEditor({
   features: () => {
     return [
+      HeadingFeature(),
       BlockquoteFeature(),
       ParagraphFeature(),
       UnderlineFeature(),
       BoldFeature(),
       ItalicFeature(),
+      AlignFeature(),
       LinkFeature({
         enabledCollections: ['pages', 'posts'],
         fields: ({ defaultFields }) => {
