@@ -206,6 +206,41 @@ export interface Page {
         blockName?: string | null;
         blockType: 'socialLinks';
       }
+    | {
+        id?: string | null;
+        blockName?: string | null;
+        blockType: 'techStackBlock';
+      }
+    | {
+        experience?:
+          | {
+              company: string;
+              position: string;
+              period: string;
+              current?: boolean | null;
+              description: {
+                root: {
+                  type: string;
+                  children: {
+                    type: any;
+                    version: number;
+                    [k: string]: unknown;
+                  }[];
+                  direction: ('ltr' | 'rtl') | null;
+                  format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                  indent: number;
+                  version: number;
+                };
+                [k: string]: unknown;
+              };
+              techStack?: string | null;
+              id?: string | null;
+            }[]
+          | null;
+        id?: string | null;
+        blockName?: string | null;
+        blockType: 'experienceBlock';
+      }
   )[];
   meta?: {
     title?: string | null;
@@ -978,6 +1013,29 @@ export interface PagesSelect<T extends boolean = true> {
                     name?: T;
                     icon?: T;
                     cssClasses?: T;
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        techStackBlock?:
+          | T
+          | {
+              id?: T;
+              blockName?: T;
+            };
+        experienceBlock?:
+          | T
+          | {
+              experience?:
+                | T
+                | {
+                    company?: T;
+                    position?: T;
+                    period?: T;
+                    current?: T;
+                    description?: T;
+                    techStack?: T;
                     id?: T;
                   };
               id?: T;

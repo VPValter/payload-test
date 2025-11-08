@@ -23,29 +23,31 @@ export const SocialLinksBlock: React.FC<Props> = ({ links }) => {
   const items = links ?? []
 
   return (
-    <div className="flex items-center gap-4 flex-wrap">
-      {items.length === 0 ? (
-        <p>No social links configured</p>
-      ) : (
-        <>
-          {items.map((item) => {
-            const Icon = ICON_MAP[item.icon.toLowerCase()]
+    <div className="max-w-5xl mx-auto">
+      <div className="flex items-center gap-4 flex-wrap">
+        {items.length === 0 ? (
+          <p>No social links configured</p>
+        ) : (
+          <>
+            {items.map((item) => {
+              const Icon = ICON_MAP[item.icon.toLowerCase()]
 
-            return (
-              <a
-                key={item.id}
-                href={item.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={`flex items-center gap-2 px-4 py-2 rounded-lg transition-colors ${item.cssClasses}`}
-              >
-                <Icon className="w-4 h-4" />
-                <span className="text-sm">{item.name}</span>
-              </a>
-            )
-          })}
-        </>
-      )}
+              return (
+                <a
+                  key={item.id}
+                  href={item.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`flex items-center gap-2 px-4 py-2 rounded-lg transition-colors ${item.cssClasses}`}
+                >
+                  <Icon className="w-4 h-4" />
+                  <span className="text-sm">{item.name}</span>
+                </a>
+              )
+            })}
+          </>
+        )}
+      </div>
     </div>
   )
 }
