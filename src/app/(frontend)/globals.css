@@ -137,10 +137,10 @@ html[data-theme='light'] {
   @apply my-0;
 }
 
-.prose h1 {
+.hero.low-impact h1 {
   @apply text-5xl md:text-6xl font-bold mb-2;
 }
-.prose h2 {
+.hero.low-impact h2 {
   @apply text-4xl md:text-5xl font-bold mb-2 mt-0;
 }
 
