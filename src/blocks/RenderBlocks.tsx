@@ -12,6 +12,7 @@ import { BannerBlock } from '@/blocks/Banner/Component'
 import { SocialLinksBlock } from '@/blocks/SocialLinks/Component'
 import { TechStackBlock } from '@/blocks/TechStackBlock/Component'
 import { ExperienceBlock } from '@/blocks/ExperienceBlock/Component'
+import { PortfolioBlock } from '@/blocks/PortfolioBlock/Component'
 
 const blockComponents = {
   archive: ArchiveBlock,
@@ -24,6 +25,7 @@ const blockComponents = {
   socialLinks: SocialLinksBlock,
   techStackBlock: TechStackBlock,
   experienceBlock: ExperienceBlock,
+  portfolioBlock: PortfolioBlock,
 }
 
 export const RenderBlocks: React.FC<{
