@@ -243,6 +243,29 @@ export interface Page {
         blockName?: string | null;
         blockType: 'experienceBlock';
       }
+    | {
+        sectionTitle: string;
+        projects?:
+          | {
+              projectName: string;
+              shortDescription: string;
+              fullDescription: string;
+              technologiesUsed?:
+                | {
+                    technology?: string | null;
+                    id?: string | null;
+                  }[]
+                | null;
+              projectImage: string | Media;
+              liveUrl?: string | null;
+              codeUrl?: string | null;
+              id?: string | null;
+            }[]
+          | null;
+        id?: string | null;
+        blockName?: string | null;
+        blockType: 'portfolioBlock';
+      }
   )[];
   meta?: {
     title?: string | null;
@@ -1055,6 +1078,30 @@ export interface PagesSelect<T extends boolean = true> {
                     current?: T;
                     description?: T;
                     techStack?: T;
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        portfolioBlock?:
+          | T
+          | {
+              sectionTitle?: T;
+              projects?:
+                | T
+                | {
+                    projectName?: T;
+                    shortDescription?: T;
+                    fullDescription?: T;
+                    technologiesUsed?:
+                      | T
+                      | {
+                          technology?: T;
+                          id?: T;
+                        };
+                    projectImage?: T;
+                    liveUrl?: T;
+                    codeUrl?: T;
                     id?: T;
                   };
               id?: T;
