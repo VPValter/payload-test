@@ -105,7 +105,7 @@
     --error: 10 39% 43%;
 
     /* TODO: Temporary fix for Tailwind rounded-lg class problem? */
-    --radius: .625rem;
+    --radius: 0.625rem;
   }
 }
 
@@ -139,6 +139,9 @@ body:has(.modal) {
 }
 .prose .banner * {
   @apply my-0;
+}
+.prose a {
+  @apply text-brand-primary hover:text-brand-secondary;
 }
 
 .hero.low-impact h1 {
