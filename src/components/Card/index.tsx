@@ -67,7 +67,7 @@ export const Card: React.FC<{
       )}
 
       {titleToUse && (
-        <h3 className="text-xl font-medium text-brand-blue-primary hover:text-brand-blue-secondary transition-colors cursor-pointer mb-2">
+        <h3 className="text-xl font-medium text-brand-primary hover:text-brand-secondary transition-colors cursor-pointer mb-2">
           <Link href={href} ref={link.ref}>
             {titleToUse}
           </Link>
