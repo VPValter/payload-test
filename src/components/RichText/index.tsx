@@ -76,6 +76,15 @@ const jsxConverters: JSXConvertersFunction<NodeTypes> = ({ defaultConverters }) 
     //   }
     // }
 
+    // TODO: Refactor this maybe?
+
+    if (node.format === 1) return <strong className="text-foreground">{node.text}</strong>
+    if (node.format === 2) return <em>{node.text}</em>
+    if (node.format === 16)
+      return (
+        <code className="bg-gray-800 p-1 rounded text-brand-primary font-normal">{node.text}</code>
+      )
+
     return <span style={style}>{node.text}</span>
   },
 })

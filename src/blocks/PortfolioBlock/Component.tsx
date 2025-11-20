@@ -62,7 +62,7 @@ export const PortfolioBlock: React.FC<Props> = (props) => {
 
               {/* Content */}
               <div className="p-6">
-                <h3 className="text-xl font-semibold text-white mb-2 group-hover:text-brand-blue-primary transition-colors">
+                <h3 className="text-xl font-semibold text-white mb-2 group-hover:text-brand-primary transition-colors">
                   {project.projectName}
                 </h3>
 

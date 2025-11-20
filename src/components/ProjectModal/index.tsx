@@ -28,16 +28,10 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({
   isOpen,
   onClose,
 }) => {
-  // maybe TODO:
-  // body scroll overflow disable when modal is open?
-  // close on escape key ?
-
-  // DEFINITELY TODO: RESPONSIVE FOR THE MODAL CONTENT!***
-
   if (!isOpen) return null
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+    <div className="modal fixed inset-0 z-50 flex items-center justify-center p-4">
       {/* Backdrop */}
       <div className="absolute inset-0 bg-black/80 backdrop-blur-sm" onClick={onClose} />
 
@@ -53,7 +47,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({
 
         <div className="grid md:grid-cols-2 gap-0 h-full">
           {/* Left side - Image */}
-          <div className="relative bg-gray-800 min-h-[300px] md:min-h-[500px]">
+          <div className="relative bg-gray-800 min-h-[220px] md:min-h-[500px]">
             <MediaComponent
               resource={project.projectImage}
               alt={project.projectImage.alt || ''}
@@ -63,7 +57,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({
           </div>
 
           {/* Right side - Content */}
-          <div className="p-8 overflow-y-auto ">
+          <div className="p-5 sm:p-8 overflow-y-auto max-h-[calc(90vh-220px)] md:max-h-[90vh]">
             <div className="mb-4">
               <span className="text-sm text-brand-primary font-medium uppercase tracking-wider">
                 {sectionTitle}
