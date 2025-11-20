@@ -140,8 +140,21 @@ body:has(.modal) {
 .prose .banner * {
   @apply my-0;
 }
-.prose a {
-  @apply text-brand-primary hover:text-brand-secondary;
+
+.prose {
+  & :where(a):not(:where([class~='not-prose'], [class~='not-prose'] *)) {
+    @apply text-brand-primary hover:text-brand-secondary;
+  }
+}
+.prose {
+  & :where(code):not(:where([class~='not-prose'], [class~='not-prose'] *))::before {
+    content: none;
+  }
+}
+.prose {
+  & :where(code):not(:where([class~='not-prose'], [class~='not-prose'] *))::after {
+    content: none;
+  }
 }
 
 .hero.low-impact h1 {
