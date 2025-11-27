@@ -4,15 +4,15 @@ import React from 'react'
 
 import type { Footer, Logo } from '@/payload-types'
 
-import { ThemeSelector } from '@/providers/Theme/ThemeSelector'
-import { CMSLink } from '@/components/Link'
+// import { ThemeSelector } from '@/providers/Theme/ThemeSelector'
+// import { CMSLink } from '@/components/Link'
 import { LogoComponent } from '@/components/Logo/LogoComponent'
 
 export async function Footer() {
-  const footerData: Footer = await getCachedGlobal('footer', 1)()
+  // const footerData: Footer = await getCachedGlobal('footer', 1)()
   const logoData: Logo = (await getCachedGlobal('logo', 1)()) as Logo
 
-  const navItems = footerData?.navItems || []
+  // const navItems = footerData?.navItems || []
 
   return (
     <footer className="mt-auto border-t border-border bg-zinc-950 text-white">
@@ -26,12 +26,12 @@ export async function Footer() {
         </Link>
 
         <div className="flex flex-col-reverse items-start md:flex-row gap-4 md:items-center">
-          <ThemeSelector />
-          <nav className="flex flex-col md:flex-row gap-4">
+          {/* <ThemeSelector /> */}
+          {/* <nav className="flex flex-col md:flex-row gap-4">
             {navItems.map(({ link }, i) => {
               return <CMSLink className="text-white" key={i} {...link} />
             })}
-          </nav>
+          </nav> */}
         </div>
       </div>
     </footer>
