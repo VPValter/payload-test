@@ -23,7 +23,7 @@ export const SocialLinksBlock: React.FC<Props> = ({ links }) => {
   const items = links ?? []
 
   return (
-    <div className="max-w-5xl mx-auto">
+    <div className="max-w-4xl mx-auto pb-20">
       <div className="flex items-center gap-4 flex-wrap">
         {items.length === 0 ? (
           <p>No social links configured</p>

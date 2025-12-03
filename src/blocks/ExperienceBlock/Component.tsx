@@ -17,7 +17,7 @@ export const ExperienceBlock: React.FC<Props> = ({ experience }) => {
   const items = experience ?? []
 
   return (
-    <div className="max-w-5xl mx-auto py-20">
+    <div className="max-w-4xl mx-auto py-20">
       <h2 className="text-3xl font-bold text-white mb-16">Experience</h2>
 
       <div className="relative">
