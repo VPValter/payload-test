@@ -11,7 +11,7 @@ export const CollectionArchive: React.FC<Props> = (props) => {
   const { posts } = props
 
   return (
-    <div className={cn('max-w-5xl mx-auto')}>
+    <div className={cn('max-w-4xl mx-auto')}>
       <div className="space-y-12">
         {posts?.map((result, index) => {
           if (typeof result === 'object' && result !== null) {

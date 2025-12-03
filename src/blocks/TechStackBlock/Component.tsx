@@ -1,6 +1,6 @@
 export const TechStackBlock = () => {
   return (
-    <div className="max-w-5xl mx-auto py-20">
+    <div className="max-w-4xl mx-auto py-20">
       <h2 className="text-3xl font-bold text-white mb-16">My tech stack includes</h2>
 
       <div className="grid grid-cols-3 md:grid-cols-6 gap-8">
