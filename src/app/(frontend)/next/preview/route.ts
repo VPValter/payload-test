@@ -9,9 +9,7 @@ const payloadToken = 'payload-token'
 export async function GET(
   req: Request & {
     cookies: {
-      get: (name: string) => {
-        value: string
-      }
+      get: (name: string) => { value: string | undefined } | undefined
     }
   },
 ): Promise<Response> {

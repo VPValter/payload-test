@@ -8,9 +8,7 @@ export const maxDuration = 60 // This function can run for a maximum of 60 secon
 export async function POST(
   req: Request & {
     cookies: {
-      get: (name: string) => {
-        value: string
-      }
+      get: (name: string) => { value: string | undefined } | undefined
     }
   },
 ): Promise<Response> {
