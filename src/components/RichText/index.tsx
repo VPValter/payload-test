@@ -1,5 +1,6 @@
 import { MediaBlock } from '@/blocks/MediaBlock/Component'
-import { defaultColors, DefaultNodeTypes, SerializedBlockNode } from '@payloadcms/richtext-lexical'
+// import { defaultColors, DefaultNodeTypes, SerializedBlockNode } from '@payloadcms/richtext-lexical'
+import { DefaultNodeTypes, SerializedBlockNode } from '@payloadcms/richtext-lexical'
 import { SerializedEditorState } from '@payloadcms/richtext-lexical/lexical'
 import {
   JSXConvertersFunction,
