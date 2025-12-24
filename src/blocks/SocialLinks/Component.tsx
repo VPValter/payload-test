@@ -1,7 +1,7 @@
 import React from 'react'
 import { Github, Linkedin, FileText, Code, Mail } from 'lucide-react'
 
-const ICON_MAP: Record<string, React.ComponentType<any>> = {
+const ICON_MAP: Record<string, React.ComponentType<React.SVGProps<SVGSVGElement>>> = {
   github: Github,
   linkedin: Linkedin,
   filetext: FileText,
