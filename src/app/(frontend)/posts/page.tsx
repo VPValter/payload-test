@@ -34,8 +34,15 @@ export default async function Page() {
       <div className="max-w-4xl mx-auto">
         <div className="prose dark:prose-invert max-w-none">
           <h1 className="text-4xl font-bold text-white mb-6">Posts</h1>
-          <p className="text-lg text-gray-400 mb-16">
-            Posts from my blog. I write some programming stuff here.
+          <p className="text-lg text-gray-400 mb-3">
+            I hesitate to call this a "blog", since for me that implies a certain level of
+            consistency, quality, and thought-out-ness. This is more of a log where I'm mostly just
+            documenting some problems I've encountered and how I solved them, and writing down my
+            thought process as I go along.
+          </p>
+          <p className="text-lg text-gray-400 mt-3 mb-16">
+            I do this mostly as a journal and my personal reminder, but if someone else finds some
+            value in it, all the better.
           </p>
         </div>
       </div>
