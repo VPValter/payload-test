@@ -31,6 +31,8 @@ export const Search: React.FC = () => {
             setValue(event.target.value)
           }}
           placeholder="Search"
+          autoComplete="off"
+          className='border-gray-800 focus-visible:ring-brand-secondary'
         />
         <button type="submit" className="sr-only">
           submit
