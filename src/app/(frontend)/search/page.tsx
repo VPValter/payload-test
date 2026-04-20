@@ -5,6 +5,7 @@ import { Suspense } from 'react'
 import { Search } from '@/search/Component'
 import PageClient from './page.client'
 import { SearchResults } from './SearchResults'
+import { SearchResultsSkeleton } from './SearchResultsSkeleton'
 
 type Args = {
   searchParams: Promise<{
@@ -26,7 +27,7 @@ export default function Page({ searchParams }: Args) {
         </div>
       </div>
 
-      <Suspense fallback={<div className="container text-center text-muted-foreground">Loading results…</div>}>
+      <Suspense fallback={<SearchResultsSkeleton />}>
         <SearchResults searchParams={searchParams} />
       </Suspense>
     </div>
