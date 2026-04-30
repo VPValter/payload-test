@@ -26,10 +26,12 @@ export default function Page({ searchParams }: Args) {
           </div>
         </div>
       </div>
-
-      <Suspense fallback={<SearchResultsSkeleton />}>
-        <SearchResults searchParams={searchParams} />
-      </Suspense>
+      
+      <div className="px-6">
+        <Suspense fallback={<SearchResultsSkeleton />}>
+          <SearchResults searchParams={searchParams} />
+        </Suspense>
+      </div>
     </div>
   )
 }
