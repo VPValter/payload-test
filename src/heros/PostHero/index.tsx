@@ -64,7 +64,7 @@ export const PostHero: React.FC<{
         {/* Date */}
         {originallyWrittenAt && (
           <div className="flex flex-col gap-1 text-gray-400 mb-12">
-            <p className="font-medium">Originally written on</p>
+            {/* <p className="font-medium">Originally written on</p> */}
 
             <time dateTime={originallyWrittenAt}>{formatDateTime(originallyWrittenAt)}</time>
           </div>
