@@ -16,7 +16,9 @@ export default function Loading() {
         </div>
       </div>
 
-      <SearchResultsSkeleton />
+      <div className="px-6">
+        <SearchResultsSkeleton />
+      </div>
     </div>
   )
 }
