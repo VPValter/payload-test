@@ -892,6 +892,7 @@ export interface Search {
     value: string | Post;
   };
   slug?: string | null;
+  originallyWrittenAt?: string | null;
   meta?: {
     title?: string | null;
     description?: string | null;
@@ -1557,6 +1558,7 @@ export interface SearchSelect<T extends boolean = true> {
   priority?: T;
   doc?: T;
   slug?: T;
+  originallyWrittenAt?: T;
   meta?:
     | T
     | {
