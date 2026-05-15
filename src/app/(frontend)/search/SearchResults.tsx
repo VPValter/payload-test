@@ -18,11 +18,13 @@ export async function SearchResults({ searchParams }: SearchResultsProps) {
     collection: 'search',
     depth: 1,
     limit: 12,
+    sort: '-originallyWrittenAt',
     select: {
       title: true,
       slug: true,
       categories: true,
       meta: true,
+      originallyWrittenAt: true,
     },
     pagination: false,
     ...(query

@@ -8,7 +8,7 @@ export function SearchResultsSkeleton() {
       <div className="space-y-12">
         {[0, 1, 2].map((key) => (
           <article key={key} className="group">
-            {/* <div className="h-4 w-28 max-w-[40%] rounded bg-muted/70 animate-pulse" /> */}
+            <div className="h-5 w-28 mb-2 max-w-[40%] rounded bg-muted/70 animate-pulse" />
             <div className="h-7 w-[85%] max-w-xl rounded bg-muted/70 animate-pulse mb-2" />
             <div className="space-y-2">
               <div className="h-4 w-full rounded bg-muted/50 animate-pulse" />
