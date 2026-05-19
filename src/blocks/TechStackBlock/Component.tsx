@@ -3,7 +3,7 @@ export const TechStackBlock = () => {
     <div className="max-w-4xl mx-auto py-20">
       <h2 className="text-3xl font-bold text-white mb-16">My tech stack includes</h2>
 
-      <div className="grid grid-cols-3 md:grid-cols-6 gap-8">
+      <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-8 text-center">
         {/* JavaScript */}
         <div className="flex flex-col items-center group">
           <div className="w-16 h-16 bg-gray-800 rounded-lg flex items-center justify-center mb-3 group-hover:bg-gray-700 transition-colors">
