@@ -1,3 +1,23 @@
+import {
+  SiJavascript,
+  SiJquery,
+  SiTypescript,
+  SiReact,
+  SiNextdotjs,
+  SiTanstack,
+  SiTailwindcss,
+  SiShadcnui,
+  SiHtml5,
+  SiCss,
+  SiGit,
+  SiBootstrap,
+  SiClaude,
+  SiCursor,
+} from '@icons-pack/react-simple-icons'
+import Image from 'next/image'
+
+import telerikIcon from './telerik.svg'
+
 export const TechStackBlock = () => {
   return (
     <div className="max-w-4xl mx-auto py-20">
@@ -7,7 +27,7 @@ export const TechStackBlock = () => {
         {/* JavaScript */}
         <div className="flex flex-col items-center group">
           <div className="w-16 h-16 bg-gray-800 rounded-lg flex items-center justify-center mb-3 group-hover:bg-gray-700 transition-colors">
-            <span className="text-yellow-400 font-bold text-xs">JS</span>
+            <SiJavascript />
           </div>
           <span className="text-sm text-gray-400">JavaScript</span>
         </div>
@@ -15,7 +35,7 @@ export const TechStackBlock = () => {
         {/* jQuery */}
         <div className="flex flex-col items-center group">
           <div className="w-16 h-16 bg-gray-800 rounded-lg flex items-center justify-center mb-3 group-hover:bg-gray-700 transition-colors">
-            <span className="text-blue-400 font-bold text-xs">jQ</span>
+            <SiJquery />
           </div>
           <span className="text-sm text-gray-400">jQuery</span>
         </div>
@@ -23,7 +43,7 @@ export const TechStackBlock = () => {
         {/* KendoJS */}
         <div className="flex flex-col items-center group">
           <div className="w-16 h-16 bg-gray-800 rounded-lg flex items-center justify-center mb-3 group-hover:bg-gray-700 transition-colors">
-            <span className="text-green-400 font-bold text-xs">K</span>
+            <Image src={telerikIcon} alt="Telerik logo icon" width={24} height={22} className="top-[2px] relative" aria-hidden />
           </div>
           <span className="text-sm text-gray-400">KendoJS</span>
         </div>
@@ -31,7 +51,7 @@ export const TechStackBlock = () => {
         {/* TypeScript */}
         <div className="flex flex-col items-center group">
           <div className="w-16 h-16 bg-gray-800 rounded-lg flex items-center justify-center mb-3 group-hover:bg-gray-700 transition-colors">
-            <span className="text-blue-500 font-bold text-xs">TS</span>
+            <SiTypescript />
           </div>
           <span className="text-sm text-gray-400">TypeScript</span>
         </div>
@@ -39,7 +59,7 @@ export const TechStackBlock = () => {
         {/* React */}
         <div className="flex flex-col items-center group">
           <div className="w-16 h-16 bg-gray-800 rounded-lg flex items-center justify-center mb-3 group-hover:bg-gray-700 transition-colors">
-            <span className="text-cyan-400 font-bold text-xs">⚛</span>
+            <SiReact />
           </div>
           <span className="text-sm text-gray-400">React</span>
         </div>
@@ -47,7 +67,7 @@ export const TechStackBlock = () => {
         {/* Next.js */}
         <div className="flex flex-col items-center group">
           <div className="w-16 h-16 bg-gray-800 rounded-lg flex items-center justify-center mb-3 group-hover:bg-gray-700 transition-colors">
-            <span className="text-white font-bold text-xs">N</span>
+            <SiNextdotjs />
           </div>
           <span className="text-sm text-gray-400">Next.js</span>
         </div>
@@ -55,7 +75,7 @@ export const TechStackBlock = () => {
         {/* Tanstack Query */}
         <div className="flex flex-col items-center group">
           <div className="w-16 h-16 bg-gray-800 rounded-lg flex items-center justify-center mb-3 group-hover:bg-gray-700 transition-colors">
-            <span className="text-red-400 font-bold text-xs">TQ</span>
+            <SiTanstack />
           </div>
           <span className="text-sm text-gray-400">Tanstack Query</span>
         </div>
@@ -63,7 +83,7 @@ export const TechStackBlock = () => {
         {/* Tanstack Router */}
         <div className="flex flex-col items-center group">
           <div className="w-16 h-16 bg-gray-800 rounded-lg flex items-center justify-center mb-3 group-hover:bg-gray-700 transition-colors">
-            <span className="text-red-400 font-bold text-xs">TR</span>
+            <SiTanstack />
           </div>
           <span className="text-sm text-gray-400">Tanstack Router</span>
         </div>
@@ -71,7 +91,7 @@ export const TechStackBlock = () => {
         {/* Tailwind CSS */}
         <div className="flex flex-col items-center group">
           <div className="w-16 h-16 bg-gray-800 rounded-lg flex items-center justify-center mb-3 group-hover:bg-gray-700 transition-colors">
-            <span className="text-teal-400 font-bold text-xs">TW</span>
+            <SiTailwindcss />
           </div>
           <span className="text-sm text-gray-400">TailwindCSS</span>
         </div>
@@ -79,7 +99,7 @@ export const TechStackBlock = () => {
         {/* ShadCN */}
         <div className="flex flex-col items-center group">
           <div className="w-16 h-16 bg-gray-800 rounded-lg flex items-center justify-center mb-3 group-hover:bg-gray-700 transition-colors">
-            <span className="text-gray-300 font-bold text-xs">SH</span>
+            <SiShadcnui />
           </div>
           <span className="text-sm text-gray-400">ShadCN</span>
         </div>
@@ -87,7 +107,7 @@ export const TechStackBlock = () => {
         {/* HTML */}
         <div className="flex flex-col items-center group">
           <div className="w-16 h-16 bg-gray-800 rounded-lg flex items-center justify-center mb-3 group-hover:bg-gray-700 transition-colors">
-            <span className="text-orange-500 font-bold text-xs">HTML</span>
+            <SiHtml5 />
           </div>
           <span className="text-sm text-gray-400">HTML</span>
         </div>
@@ -95,7 +115,7 @@ export const TechStackBlock = () => {
         {/* CSS3 */}
         <div className="flex flex-col items-center group">
           <div className="w-16 h-16 bg-gray-800 rounded-lg flex items-center justify-center mb-3 group-hover:bg-gray-700 transition-colors">
-            <span className="text-blue-400 font-bold text-xs">CSS3</span>
+            <SiCss />
           </div>
           <span className="text-sm text-gray-400">CSS3</span>
         </div>
@@ -103,7 +123,7 @@ export const TechStackBlock = () => {
         {/* Git */}
         <div className="flex flex-col items-center group">
           <div className="w-16 h-16 bg-gray-800 rounded-lg flex items-center justify-center mb-3 group-hover:bg-gray-700 transition-colors">
-            <span className="text-orange-600 font-bold text-xs">Git</span>
+            <SiGit />
           </div>
           <span className="text-sm text-gray-400">Git</span>
         </div>
@@ -111,9 +131,25 @@ export const TechStackBlock = () => {
         {/* Bootstrap */}
         <div className="flex flex-col items-center group">
           <div className="w-16 h-16 bg-gray-800 rounded-lg flex items-center justify-center mb-3 group-hover:bg-gray-700 transition-colors">
-            <span className="text-purple-500 font-bold text-xs">BS</span>
+            <SiBootstrap />
           </div>
           <span className="text-sm text-gray-400">Bootstrap</span>
+        </div>
+
+        {/* Claude */}
+        <div className="flex flex-col items-center group">
+          <div className="w-16 h-16 bg-gray-800 rounded-lg flex items-center justify-center mb-3 group-hover:bg-gray-700 transition-colors">
+            <SiClaude />
+          </div>
+          <span className="text-sm text-gray-400">Claude</span>
+        </div>
+
+        {/* Cursor */}
+        <div className="flex flex-col items-center group">
+          <div className="w-16 h-16 bg-gray-800 rounded-lg flex items-center justify-center mb-3 group-hover:bg-gray-700 transition-colors">
+            <SiCursor />
+          </div>
+          <span className="text-sm text-gray-400">Cursor</span>
         </div>
       </div>
     </div>
