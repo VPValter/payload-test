@@ -16,9 +16,11 @@
     "lint:fix": "cross-env NODE_OPTIONS=--no-deprecation next lint --fix",
     "payload": "cross-env NODE_OPTIONS=--no-deprecation payload",
     "reinstall": "cross-env NODE_OPTIONS=--no-deprecation rm -rf node_modules && rm pnpm-lock.yaml && pnpm --ignore-workspace install",
-    "start": "cross-env NODE_OPTIONS=--no-deprecation next start"
+    "start": "cross-env NODE_OPTIONS=--no-deprecation next start",
+    "vreinstall": "rm -rf node_modules && rm package-lock.json && npm cache clean --force && npm install"
   },
   "dependencies": {
+    "@icons-pack/react-simple-icons": "^13.13.0",
     "@payloadcms/db-mongodb": "3.68.1",
     "@payloadcms/live-preview-react": "3.68.1",
     "@payloadcms/next": "3.68.1",
