@@ -41,7 +41,7 @@ export const SocialLinksBlock: React.FC<Props> = ({ links }) => {
                   className={`flex items-center gap-2 px-4 py-2 rounded-lg transition-colors ${item.cssClasses}`}
                 >
                   <Icon className="w-4 h-4" />
-                  <span className="text-sm">{item.name}</span>
+                  <span className="text-sm text-white">{item.name}</span>
                 </a>
               )
             })}

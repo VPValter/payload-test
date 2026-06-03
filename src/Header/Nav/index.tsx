@@ -14,7 +14,7 @@ export const HeaderNav: React.FC<{ data: HeaderType }> = ({ data }) => {
   const pathname = usePathname()
 
   return (
-    <nav className="flex items-center gap-6">
+    <nav role="navigation" className="flex items-center gap-6">
       {navItems.map(({ link }, i) => {
         const slug =
           link.url ||
