@@ -32,7 +32,7 @@ export const ExperienceBlock: React.FC<Props> = ({ experience }) => {
                 <div
                   className={`w-3 h-3 rounded-full border-2 ${
                     experience.current
-                      ? 'bg-brand-primary border-brand-primary'
+                      ? 'bg-brand-secondary border-brand-secondary'
                       : 'bg-gray-700 border-gray-600'
                   }`}
                 ></div>
@@ -41,7 +41,7 @@ export const ExperienceBlock: React.FC<Props> = ({ experience }) => {
               {/* Content */}
               <div className="flex-1 pb-8">
                 <div className="mb-3">
-                  <h3 className="text-brand-primary font-medium text-lg">{experience.company}</h3>
+                  <h3 className="text-brand-secondary font-medium text-lg">{experience.company}</h3>
                   <h4 className="text-white font-semibold text-xl">{experience.position}</h4>
                   <p className="text-gray-400 text-md mt-1">{experience.period}</p>
                 </div>

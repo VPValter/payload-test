@@ -16,7 +16,7 @@ export async function Footer() {
   // const navItems = footerData?.navItems || []
 
   return (
-    <footer className="mt-auto border-t border-border bg-zinc-950 text-white">
+    <footer role="contentinfo" className="mt-auto border-t border-border bg-zinc-950 text-white">
       <div className="max-w-5xl mx-auto p-6 flex items-center">
         <Link className="flex items-center shrink-0" href="/">
           <LogoComponent
@@ -28,10 +28,10 @@ export async function Footer() {
 
         <span className='mr-auto ml-4 text-sm'>© {new Date().getFullYear()} Vladimir P. All rights reserved.</span>
 
-        <a href="https://www.linkedin.com/in/vperic84/" target="_blank" rel="noopener noreferrer" className='ml-auto p-3'>
+        <a href="https://www.linkedin.com/in/vperic84/" target="_blank" rel="noopener noreferrer" className='ml-auto p-3' aria-label="Vlad's LinkedIn">
           <Linkedin className='hover:text-brand-secondary transition-[color]' />
         </a>
-        <a href="https://www.instagram.com/vladimirp.dev/" target="_blank" rel="noopener noreferrer" className='p-3'>
+        <a href="https://www.instagram.com/vladimirp.dev/" target="_blank" rel="noopener noreferrer" className='p-3' aria-label="Vlad's Instagram">
           <Instagram className='hover:text-brand-secondary transition-[color]' />
         </a>
 

@@ -17,12 +17,12 @@ type LowImpactHeroType =
 export const LowImpactHero: React.FC<LowImpactHeroType> = ({ children, richText }) => {
   return (
     <section className="pt-32 pb-20 px-6 hero low-impact">
-      <div className="max-w-4xl mx-auto text-balance ">
+      <main role="main" className="max-w-4xl mx-auto text-balance ">
         {children ||
           (richText && (
             <RichText className="text-lg text-gray-300" data={richText} enableGutter={false} />
           ))}
-      </div>
+      </main>
     </section>
   )
 }
