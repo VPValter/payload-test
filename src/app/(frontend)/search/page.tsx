@@ -38,6 +38,13 @@ export default function Page({ searchParams }: Args) {
 
 export function generateMetadata(): Metadata {
   return {
-    title: `Payload Website Template Search`,
+    title: `VladimirP Posts Search`,
+    alternates: {
+      canonical: '/search',
+    },
+    robots: {
+      index: false,
+      follow: true,
+    },
   }
 }

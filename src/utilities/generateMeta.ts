@@ -5,6 +5,11 @@ import type { Media, Page, Post, Config } from '../payload-types'
 import { mergeOpenGraph } from './mergeOpenGraph'
 import { getServerSideURL } from './getURL'
 
+type GenerateMetaArgs = {
+  doc: Partial<Page> | Partial<Post> | null
+  collection: 'pages' | 'posts'
+}
+
 const getImageURL = (image?: Media | Config['db']['defaultIDType'] | null) => {
   const serverUrl = getServerSideURL()
 
@@ -19,16 +24,23 @@ const getImageURL = (image?: Media | Config['db']['defaultIDType'] | null) => {
   return url
 }
 
-export const generateMeta = async (args: {
-  doc: Partial<Page> | Partial<Post>
-}): Promise<Metadata> => {
-  const { doc } = args || {}
+function getPath(doc: Partial<Page> | Partial<Post>, collection: 'pages' | 'posts'): string {
+  const slug = doc?.slug
+  if (!slug || slug === 'home') return '/'
+  if (collection === 'posts') return `/posts/${slug}`
+  return `/${slug}`
+}
+
+export const generateMeta = async (args: GenerateMetaArgs): Promise<Metadata> => {
+  const { doc, collection } = args || {}
+
+  const path = getPath(doc || {}, collection)
 
   const ogImage = getImageURL(doc?.meta?.image)
 
   const title = doc?.meta?.title
-    ? doc?.meta?.title + ' | Payload Website Template'
-    : 'Payload Website Template'
+    ? doc?.meta?.title + ' | VladimirP'
+    : 'VladimirP'
 
   return {
     description: doc?.meta?.description,
@@ -42,8 +54,11 @@ export const generateMeta = async (args: {
           ]
         : undefined,
       title,
-      url: Array.isArray(doc?.slug) ? doc?.slug.join('/') : '/',
+      url: path,
     }),
     title,
+    alternates: {
+      canonical: path,
+    },
   }
 }

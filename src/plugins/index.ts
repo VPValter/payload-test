@@ -15,13 +15,18 @@ import { Page, Post } from '@/payload-types'
 import { getServerSideURL } from '@/utilities/getURL'
 
 const generateTitle: GenerateTitle<Post | Page> = ({ doc }) => {
-  return doc?.title ? `${doc.title} | Payload Website Template` : 'Payload Website Template'
+  return doc?.title ? `${doc.title} | VladimirP` : 'VladimirP'
 }
 
-const generateURL: GenerateURL<Post | Page> = ({ doc }) => {
-  const url = getServerSideURL()
+const generateURL: GenerateURL<Post | Page> = ({ doc, collectionSlug }) => {
+  const base = getServerSideURL()
+  const slug = doc?.slug
 
-  return doc?.slug ? `${url}/${doc.slug}` : url
+  if (!slug || slug === 'home') return base
+
+  if (collectionSlug === 'posts') return `${base}/posts/${slug}`
+
+  return `${base}/${slug}`
 }
 
 export const plugins: Plugin[] = [
