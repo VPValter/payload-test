@@ -6,10 +6,8 @@ import { unstable_cache } from 'next/cache'
 const getPagesSitemap = unstable_cache(
   async () => {
     const payload = await getPayload({ config })
-    const SITE_URL =
-      process.env.NEXT_PUBLIC_SERVER_URL ||
-      process.env.VERCEL_PROJECT_PRODUCTION_URL ||
-      'https://example.com'
+    const raw = process.env.NEXT_PUBLIC_SERVER_URL || process.env.VERCEL_PROJECT_PRODUCTION_URL || 'example.com'
+    const SITE_URL = /^https?:\/\//i.test(raw) ? raw.replace(/\/$/, '') : `https://${raw.replace(/\/$/, '')}`
 
     const results = await payload.find({
       collection: 'pages',
