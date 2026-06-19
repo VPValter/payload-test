@@ -29,6 +29,8 @@ export const ImageMedia: React.FC<MediaProps> = (props) => {
     loading: loadingFromProps,
   } = props
 
+  console.log(resource);
+
   let width: number | undefined
   let height: number | undefined
   let alt = altFromProps
