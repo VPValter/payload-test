@@ -1,7 +1,8 @@
 import { getCachedGlobal } from '@/utilities/getGlobals'
 import Link from 'next/link'
 import React from 'react'
-import { Linkedin, Instagram } from 'lucide-react'
+import { Linkedin } from 'lucide-react'
+import { SiBluesky } from '@icons-pack/react-simple-icons'
 
 import type { Footer, Logo } from '@/payload-types'
 
@@ -31,8 +32,8 @@ export async function Footer() {
         <a href="https://www.linkedin.com/in/vperic84/" target="_blank" rel="noopener noreferrer" className='ml-auto p-3' aria-label="Vlad's LinkedIn">
           <Linkedin className='hover:text-brand-secondary transition-[color]' />
         </a>
-        <a href="https://www.instagram.com/vladimirp.dev/" target="_blank" rel="noopener noreferrer" className='p-3' aria-label="Vlad's Instagram">
-          <Instagram className='hover:text-brand-secondary transition-[color]' />
+        <a href="https://bsky.app/profile/vladimirp.dev" target="_blank" rel="noopener noreferrer" className='p-3' aria-label="Vlad's Bluesky">
+          <SiBluesky className='hover:text-brand-secondary transition-[color]' />
         </a>
 
         {/* <div className="flex flex-col-reverse items-start md:flex-row gap-4 md:items-center">
